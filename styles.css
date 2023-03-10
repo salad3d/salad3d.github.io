@@ -92,3 +92,7 @@ main {
 	height: 1px;
 	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
 }
+
+.teaser {
+  width: 100%;
+}
