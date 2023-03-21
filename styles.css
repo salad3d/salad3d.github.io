@@ -16,10 +16,22 @@ main {
 }
 
 .header {
-  margin-top: 2rem;
-  max-width: 80vw;
+  max-width: 90vh;
   min-width: 10rem;
-  width: 60%;
+  width: 80vw;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.content {
+  max-width: 90vh;
+  min-width: 10rem;
+  width: 80vw;
+  margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +50,7 @@ main {
   margin: 2rem 0;
 }
 
-.abstract-title {
+.sectitle {
   font-family: var(--font-main);
   font-size: 1.5rem;
   font-weight: 700;
@@ -74,6 +86,18 @@ main {
   border-radius: 0.25rem;
 }
 
+#bibtex-link {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 300;
+  text-decoration: none;
+  color: white;
+  background: black;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
 .footer {
   font-family: var(--font-main);
   font-weight: 300;
@@ -95,6 +119,80 @@ main {
 	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
 }
 
-.teaser {
+.teaser-container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.teaser-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex
+}
+
+.teaser-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#teaser-a {
+  width: 100%;
+  margin-bottom: -1.5rem;
+}
+
+.teaser-b {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 0.25rem;
+}
+
+.teaser-b-caption {
+  font-family: var(--font-fancy);
+  font-size: 1.25rem;
+  font-weight: 300;
+  width: 25%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.qual {
+  width: 100%;
+}
+
+.teaser-c-caption {
+  font-family: var(--font-fancy);
+  font-size: 1.25rem;
+  font-weight: 300;
+  width: 40%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.teaser-caption {
+  font-family: var(--font-fancy);
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.hl-red {
+  color: color(srgb 0.93 0.3291 0.279);
+}
+
+.hl-green {
+  color: color(srgb 0.4712 0.76 0.5693);
+}
+
+.bibcontent {
+  width: 100%;
+  margin: 0;
 }
