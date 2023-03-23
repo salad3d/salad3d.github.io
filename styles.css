@@ -30,8 +30,8 @@ main {
 .content {
   max-width: 90vh;
   min-width: 10rem;
+  margin-top: 1.25rem;
   width: 80vw;
-  margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
