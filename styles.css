@@ -69,10 +69,12 @@ main {
  display: flex;
  align-items: center;
  justify-content: center;
- gap: 1rem;
+ text-align: center;
+ gap: 0;
  font-family: var(--font-main);
  font-weight: 300;
  font-size: 1.5rem;
+ flex-direction: column;
 }
 
 .social-link {
@@ -195,4 +197,15 @@ main {
 .bibcontent {
   width: 100%;
   margin: 0;
+}
+
+.institution-list {
+  font-family: var(--font-main);
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+
+.contribution {
+  font-family: var(--font-main);
+  font-size: 1rem;
 }
