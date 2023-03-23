@@ -36,13 +36,47 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
+}
+
+.qual-cap-con {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: var(--font-fancy);
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: 0.5rem 0;
+}
+
+.qual-cap {
+  width: 10%;
+  text-align: center;
+}
+
+.qual-cap2 {
+  width: 11.11%;
+  text-align: center;
+}
+
+.qual-cap3 {
+  width: 21.22%;
+  text-align: center;
+}
+
+.qual2 {
+  margin: 0 1rem;
+}
+
+.qual3 {
+  display: flex;
+  width: 50%;
 }
 
 .title {
   font-family: var(--font-main);
   font-size: 2.25rem;
-  font-weight: 800;
+  font-weight: 700;
   text-align: center;
 }
 
@@ -50,12 +84,40 @@ main {
   margin: 2rem 0;
 }
 
-.sectitle {
+.abstitle {
   font-family: var(--font-main);
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
   margin: .5rem;
+}
+
+.teaser-cap-a {
+  position: relative;
+  top: -1rem;
+}
+
+.section3 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sectitle {
+  font-family: var(--font-main);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
 }
 
 .abstract-content {
@@ -76,6 +138,10 @@ main {
  font-size: 1.5rem;
  flex-direction: column;
  margin-bottom: 1rem;
+}
+
+.author {
+  display: center;
 }
 
 .social-link {
@@ -107,7 +173,8 @@ main {
   font-size: 1.25rem;
   width: 100%;
   text-align: center;
-  color: white;
+  color: black;
+  margin: 2rem 0;
 }
 
 .divider {
@@ -195,9 +262,13 @@ main {
   color: color(srgb 0.4712 0.76 0.5693);
 }
 
-.bibcontent {
-  width: 100%;
+pre {
   margin: 0;
+  font-size: min(0.92rem, 1vw);
+  border-radius: 0.5rem;
+  border-style: solid;
+  border-width: 1px;
+  padding: 1rem;
 }
 
 .institution-list {
@@ -208,7 +279,7 @@ main {
 
 .contribution {
   font-family: var(--font-main);
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .author-link {

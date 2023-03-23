@@ -1,108 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <title>Hello Salad</title>
-  </head>
-  <body>
-    <main>
-      <div class="header">
-        <h1 class="title">🥗 SALAD: Part-Level Latent Diffusion for 3D Shape Generation and Manipulation</h1>
-        <div class="author-list">
-          <div class="author">
-            <a href="http://63days.github.io" class="author-link">Juil Koo*</a>,
-            <a href="https://dvelopery0115.github.io" class="author-link">Seungwoo Yoo*</a>,
-            <a href="http://min-hieu.github.io" class="author-link">Minh Hieu Nguyen*</a>,
-            <a href="https://mhsung.github.io" class="author-link">Minhyuk Sung</a>
-          </div>
-          <div class="institution-list">
-            KAIST
-          </div>
-          <div class="contribution">
-            (* denotes equal contribution)
-          </div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+  <title>Salad3D</title>
+</head>
+
+<body>
+  <main>
+    <div class="header">
+      <h1 class="title">🥗 SALAD: Part-Level Latent Diffusion for 3D Shape Generation and Manipulation</h1>
+      <div class="author-list">
+        <div class="author">
+          <a href="http://63days.github.io" class="author-link">Juil Koo*,</a>
+          <a href="https://dvelopery0115.github.io" class="author-link">Seungwoo Yoo*,</a>
+          <a href="http://min-hieu.github.io" class="author-link">Minh Hieu Nguyen*,</a>
+          <a href="https://mhsung.github.io" class="author-link">Minhyuk Sung</a>
         </div>
-        <div class="socials">
-          <a class="social-link" href="https://arxiv.org/abs/2303.12236">Arxiv</a>
-          <a class="social-link" href="">Code (Coming Soon)</a>
-          <a class="social-link" href="">Demo (Coming Soon)</a>
-          <span id="bibtex-link">Bibtex</span>
+        <div class="institution-list">
+          KAIST
         </div>
-        <div class="teaser-container">
-          <div class="teaser-container">
-            <img src="assets/teaser_a.png" id="teaser-a"></img>
-            <span class="teaser-caption">(a) Shape Generation</span>
-          </div>
-          <div class="teaser-bottom">
-            <div class="teaser-container">
-              <img src="assets/teaser_b.svg"></img>
-              <div class="teaser-b">
-                <span class="teaser-b-caption">Shape A</span>
-                <span class="teaser-b-caption">Shape B</span>
-                <span class="teaser-b-caption">A→B</span>
-                <span class="teaser-b-caption">A→B Refined</span>
-              </div>
-              <span class="teaser-caption">(b) Part Mixing Refinement</span>
-            </div>
-            <div class="teaser-container">
-              <img src="assets/teaser_c.svg"></img>
-              <div class="teaser-b">
-                <span class="teaser-c-caption">"A chair with four <span class="hl-red">legs</span>"</span>
-                <span class="teaser-c-caption">"rectangle <span class="hl-green">back</span> chair"</span>
-              </div>
-              <span class="teaser-caption">(c) Text-guided Part Completion</span>
-            </div>
-          </div>
+        <div class="contribution">
+          (* denotes equal contribution)
         </div>
-        <div class="abstract">
-          <div class="sectitle">Abstract</div>
-          <div class="abstract-content">
-            We present a cascaded diffusion model based on a part-level implicit 3D representation. Our model achieves state-of-the-art generation quality and also enables part-level shape editing and manipulation without any additional training in conditional setup. Diffusion models have demonstrated impressive capabilities in data generation as well as zero-shot completion and editing via a guided reverse process. Recent research on 3D diffusion models has focused on improving their generation capabilities with various data representations, while the absence of structural information has limited their capability in completion and editing tasks. We thus propose our novel diffusion model using a part-level implicit representation. To effectively learn diffusion with high-dimensional embedding vectors of parts, we propose a cascaded framework, learning diffusion first on a low-dimensional subspace encoding extrinsic parameters of parts and then on the other high-dimensional subspace encoding intrinsic attributes. In the experiments, we demonstrate the outperformance of our method compared with the previous ones both in generation and part-level completion and manipulation tasks.
-          </div>
-        </div>
-        <div class="divider"></div>
       </div>
-      <div class="content">
+      <div class="socials">
+        <a class="social-link" href="https://arxiv.org/abs/2303.12236">Arxiv</a>
+        <a class="social-link" href="">Code (Coming Soon)</a>
+        <a class="social-link" href="">Demo (Coming Soon)</a>
+        <span id="bibtex-link">Bibtex</span>
+      </div>
+      <div class="teaser-container">
+        <div class="teaser-container">
+          <img src="assets/teaser_a.png" id="teaser-a"></img>
+          <span class="teaser-caption teaser-cap-a">(a) Shape Generation</span>
+        </div>
+        <div class="teaser-bottom">
+          <div class="teaser-container">
+            <img src="assets/teaser_b.svg"></img>
+            <div class="teaser-b">
+              <span class="teaser-b-caption">Shape A</span>
+              <span class="teaser-b-caption">Shape B</span>
+              <span class="teaser-b-caption">A→B</span>
+              <span class="teaser-b-caption">A→B Refined</span>
+            </div>
+            <span class="teaser-caption">(b) Part Mixing Refinement</span>
+          </div>
+          <div class="teaser-container">
+            <img src="assets/teaser_c.svg"></img>
+            <div class="teaser-b">
+              <span class="teaser-c-caption">"A chair with four <span class="hl-red">legs</span>"</span>
+              <span class="teaser-c-caption">"rectangle <span class="hl-green">back</span> chair"</span>
+            </div>
+            <span class="teaser-caption">(c) Text-guided Part Completion</span>
+          </div>
+        </div>
+      </div>
+      <div class="abstract">
+        <div class="abstitle">Abstract</div>
+        <div class="abstract-content">
+          We present a cascaded diffusion model based on a part-level implicit 3D representation. Our model achieves
+          state-of-the-art generation quality and also enables part-level shape editing and manipulation without any
+          additional training in conditional setup. Diffusion models have demonstrated impressive capabilities in data
+          generation as well as zero-shot completion and editing via a guided reverse process. Recent research on 3D
+          diffusion models has focused on improving their generation capabilities with various data representations,
+          while the absence of structural information has limited their capability in completion and editing tasks. We
+          thus propose our novel diffusion model using a part-level implicit representation. To effectively learn
+          diffusion with high-dimensional embedding vectors of parts, we propose a cascaded framework, learning
+          diffusion first on a low-dimensional subspace encoding extrinsic parameters of parts and then on the other
+          high-dimensional subspace encoding intrinsic attributes. In the experiments, we demonstrate the outperformance
+          of our method compared with the previous ones both in generation and part-level completion and manipulation
+          tasks.
+        </div>
+      </div>
+      <div class="divider"></div>
+    </div>
+    <div class="content">
+      <div class="section">
         <div class="sectitle">Generation Output</div>
-          <img src="assets/generation_comparison.png" class="qual"></img>
+        <div class="qual-cap-con">
+          <span class="qual-cap">DPM</span>
+          <span class="qual-cap">PVD</span>
+          <span class="qual-cap">LION</span>
+          <span class="qual-cap">Voxel-GAN</span>
+          <span class="qual-cap">Neural Wavelet</span>
+          <span class="qual-cap">SPAGHETTI</span>
+          <span class="qual-cap">Diff. of z</span>
+          <span class="qual-cap">Diff. of p</span>
+          <span class="qual-cap">Guassians</span>
+          <span class="qual-cap">Ours</span>
+        </div>
+        <img src="assets/generation_comparison.png" class="qual"></img>
+      </div>
+      <div class="divider"></div>
+      <div class="section">
         <div class="sectitle">Part Mixing Refinement</div>
-          <img src="assets/part_mixing.png" class="qual"></img>
+        <div class="qual-cap-con">
+          <span class="qual-cap2">GT</span>
+          <span class="qual-cap2">Bounding Box</span>
+          <span class="qual-cap2">Gaussians</span>
+          <span class="qual-cap3">ShapeFormer</span>
+          <span class="qual-cap3">Neural Wavelet</span>
+          <span class="qual-cap3">SALAD (Ours)</span>
+        </div>
+        <img src="assets/part_mixing.png" class="qual qual2"></img>
+      </div>
+      <div class="divider"></div>
+      <div class="section3">
         <div class="sectitle">Text-guided Part Completion</div>
-          <img src="assets/lang_completion.png" class="qual"></img>
+        <img src="assets/lang_completion.png" class="qual3"></img>
+      </div>
+      <div class="divider"></div>
+      <div class="section">
         <div class="sectitle">Bibtex</div>
         <pre id="bibcontent">
 @article{Koo:2023Salad,
-	title        = {SALAD: Part-Level Latent Diffusion for 3D Shape Generation and Manipulation},
-	author       = {Juil Koo and Seungwoo Yoo and Minh Hieu Nguyen and Minhyuk Sung},
-	year         = 2023,
-	journal      = {arXiv preprint arXiv:2303.12236}
-}
-        </pre>
+  title = {SALAD: Part-Level Latent Diffusion for 3D Shape Generation and Manipulation},
+  author = {Juil Koo and Seungwoo Yoo and Minh Hieu Nguyen and Minhyuk Sung},
+  year = 2023,
+  journal = {arXiv preprint arXiv:2303.12236}
+}</pre>
       </div>
-      <div class="footer">
-        @ salad-paper 2023
+      <div class="section">
+        <div class="sectitle">Acknowledgement</div>
       </div>
-    </main>
+    </div>
+    <div class="divider"></div>
+    <div class="footer">
+      @ salad-paper 2023
+    </div>
+  </main>
   <script>
-    document.getElementById("bibtex-link").onclick = function(e) {
+    document.getElementById("bibtex-link").onclick = function (e) {
       bibtxt = document.getElementById("bibcontent");
       navigator.clipboard.writeText(bibtxt.textContent);
 
       bibLink = e.srcElement;
       bibLink.textContent = "✓ Copied";
     };
-    document.getElementById("bibtex-link").onmouseover = function(e) {
+    document.getElementById("bibtex-link").onmouseover = function (e) {
       bibLink = e.srcElement;
       bibLink.textContent = "Copy";
     };
-    document.getElementById("bibtex-link").onmouseout = function(e) {
+    document.getElementById("bibtex-link").onmouseout = function (e) {
       bibLink = e.fromElement;
       bibLink.textContent = "Bibtex";
     };
   </script>
-  </body>
+</body>
+
 </html>
