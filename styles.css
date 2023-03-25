@@ -44,7 +44,7 @@ main {
   align-items: center;
   justify-content: space-around;
   font-family: var(--font-fancy);
-  font-size: 1.25rem;
+  font-size: 0.75rem;
   font-weight: 300;
   margin: 0.5rem 0;
 }
