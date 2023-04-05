@@ -106,9 +106,9 @@
           <div id="gen-content">
           </div>
           <script>
-            var all_chair_idx = [...Array(40).keys()],
-              all_table_idx = [...Array(40).keys()],
-              all_airplane_idx = [...Array(40).keys()];
+            var all_chair_idx = [...Array(53).keys()],
+                all_table_idx = [...Array(44).keys()],
+                all_airplane_idx = [...Array(40).keys()];
 
             var curr_cat = 'chair';
             const numDisplay = 10;
@@ -121,12 +121,6 @@
                   + "<model-viewer orientation='0 0 220deg' loading='lazy' id='gen-mesh-"
                   + i + "' camera-controls touch-action='pan-y' src='assets/3d/generation/"
                   + curr_cat + "/" + i + ".gltf'>\n</model-viewer>\n"
-              /*
-              + "<model-viewer orientation='0 0 220deg' loading='lazy' id='gen-gaus-"
-              + i + "' camera-controls touch-action='pan-y' src='assets/3d/generation/"
-              + curr_cat + "/" + i + "_gaus.glb'>\n</model-viewer>\n"
-              + "</div>\n";
-              */
             }
             initialize();
 
@@ -142,8 +136,10 @@
               if (!cat) cat = curr_cat;
 
               let all_idx = (cat === 'chair') ? all_chair_idx :
-                (cat === 'table') ? all_table_idx :
-                  all_airplane_idx;
+                            (cat === 'table') ? all_table_idx :
+                              all_airplane_idx;
+
+              gtag('event', cat+'_gen_click', {'time': date,});
 
               shuffleArray(all_idx);
               all_idx.map((mesh_idx, i) => {
