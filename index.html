@@ -139,7 +139,7 @@
                             (cat === 'table') ? all_table_idx :
                               all_airplane_idx;
 
-              gtag('event', cat+'_gen_click', {'time': date,});
+              gtag('event', cat+'_gen_click', {'time': Date.now(),});
 
               shuffleArray(all_idx);
               all_idx.map((mesh_idx, i) => {
