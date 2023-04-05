@@ -1,3 +1,105 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9b0f186340f854b0b5c1489fcf7c26db864f5400a7d73207f33823d23a3bb265
-size 1745
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "draco_decoder"
+  },
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "scene": 0,
+  "nodes": [
+    {
+      "name": "Node",
+      "mesh": 0
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Node-Mesh",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 1
+          },
+          "indices": 0,
+          "mode": 4,
+          "material": 0,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 0,
+              "attributes": {
+                "POSITION": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.5,
+          0.5,
+          0.5,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE",
+      "name": "default"
+    }
+  ],
+  "accessors": [
+    {
+      "componentType": 5125,
+      "count": 442044,
+      "type": "SCALAR"
+    },
+    {
+      "componentType": 5126,
+      "count": 73676,
+      "max": [
+        0.49066460132598877,
+        0.73799031972885132,
+        0.4642118513584137
+      ],
+      "min": [
+        -0.50066256523132324,
+        -0.73405671119689941,
+        -0.46694996953010559
+      ],
+      "type": "VEC3"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 60088
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 60088,
+      "uri": "23.bin"
+    }
+  ],
+  "extensionsRequired": [
+    "KHR_draco_mesh_compression"
+  ],
+  "extensionsUsed": [
+    "KHR_draco_mesh_compression"
+  ]
+}
