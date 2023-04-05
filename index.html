@@ -9,6 +9,16 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon.png">
   <title>SALAD</title>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLZGBB4Y97"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5RH1J53HJR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5RH1J53HJR');
+</script>
 
 <body>
   <main>
@@ -81,8 +91,73 @@
       <div class="divider"></div>
     </div>
     <div class="content">
+      <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js">
+      </script>
       <div class="section">
         <div class="sectitle">Generation Output</div>
+        <div class="gen-gallery">
+          <div class="gen-btn-con">
+            <span id="gen-chair" class="gen-btn gen-btn-select" onclick="shuffle('chair')">Chairs</span>
+            <span id="gen-airplane" class="gen-btn" onclick="shuffle('airplane')">Airplanes</span>
+            <span id="gen-table" class="gen-btn" onclick="shuffle('table')">Tables</span>
+            <span id="gen-shuffle" class="gen-btn" onclick="shuffle()"
+              onmousedown="document.getElementById('gen-shuffle').classList.add('gen-btn-select');"
+              onmouseup="document.getElementById('gen-shuffle').classList.remove('gen-btn-select');">Shuffle!</span>
+          </div>
+          <div id="gen-content">
+          </div>
+          <script>
+            var all_chair_idx = [...Array(40).keys()],
+              all_table_idx = [...Array(40).keys()],
+              all_airplane_idx = [...Array(40).keys()];
+
+            var curr_cat = 'chair';
+            const numDisplay = 10;
+
+            function initialize() {
+              gen_display = document.getElementById("gen-content");
+              for (let i = 0; i < numDisplay; i++)
+                gen_display.innerHTML +=
+                  "<div class='gen-entry' id='gen-entry-" + i + "'>\n"
+                  + "<model-viewer orientation='0 0 220deg' loading='lazy' id='gen-mesh-"
+                  + i + "' camera-controls touch-action='pan-y' src='assets/3d/generation/"
+                  + curr_cat + "/" + i + ".gltf'>\n</model-viewer>\n"
+              /*
+              + "<model-viewer orientation='0 0 220deg' loading='lazy' id='gen-gaus-"
+              + i + "' camera-controls touch-action='pan-y' src='assets/3d/generation/"
+              + curr_cat + "/" + i + "_gaus.glb'>\n</model-viewer>\n"
+              + "</div>\n";
+              */
+            }
+            initialize();
+
+            function shuffleArray(arr) {
+              for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+              }
+            }
+
+            function shuffle(cat = null) {
+              prevBtn = document.getElementById("gen-" + curr_cat).classList.remove("gen-btn-select");
+              if (!cat) cat = curr_cat;
+
+              let all_idx = (cat === 'chair') ? all_chair_idx :
+                (cat === 'table') ? all_table_idx :
+                  all_airplane_idx;
+
+              shuffleArray(all_idx);
+              all_idx.map((mesh_idx, i) => {
+                if (i >= numDisplay) return;
+                document.getElementById("gen-mesh-" + i).setAttribute('src',
+                  `assets/3d/generation/${cat}/${mesh_idx}.gltf`);
+              })
+              btn = document.getElementById("gen-" + cat).classList.add("gen-btn-select");
+              curr_cat = cat;
+            }
+          </script>
+        </div>
+        <div class="sectitle">Generation Comparison</div>
         <div class="qual-cap-con">
           <span class="qual-cap">DPM</span>
           <span class="qual-cap">PVD</span>
@@ -111,7 +186,7 @@
         <img src="assets/part_mixing.png" class="qual qual2"></img>
       </div>
       <div class="divider"></div>
-      <div class="section3">
+      <div class="section3 section">
         <div class="sectitle">Text-guided Part Completion</div>
         <img src="assets/lang_completion.png" class="qual3"></img>
       </div>
@@ -119,12 +194,12 @@
       <div class="section">
         <div class="sectitle">Bibtex</div>
         <pre id="bibcontent">
-@article{Koo:2023Salad,
-  title = {SALAD: Part-Level Latent Diffusion for 3D Shape Generation and Manipulation},
-  author = {Juil Koo and Seungwoo Yoo and Minh Hieu Nguyen and Minhyuk Sung},
-  year = 2023,
-  journal = {arXiv preprint arXiv:2303.12236}
-}</pre>
+          @article{Koo:2023Salad,
+          title = {{SALAD}: Part-Level Latent Diffusion for 3D Shape Generation and Manipulation},
+          author = {Juil Koo and Seungwoo Yoo and Minh Hieu Nguyen and Minhyuk Sung},
+          year = {2023},
+          journal = {arXiv preprint arXiv:2303.12236}
+          }</pre>
       </div>
       <div class="section">
         <div class="sectitle">Acknowledgement</div>
