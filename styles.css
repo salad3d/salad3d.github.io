@@ -17,7 +17,7 @@ main {
 
 .header {
   max-width: 90vh;
-  min-width: 10rem;
+  min-width: 50vw;
   width: 80vw;
   margin-top: 2rem;
   display: flex;
@@ -28,8 +28,7 @@ main {
 }
 
 .content {
-  max-width: 90vh;
-  min-width: 10rem;
+  max-width: 80vw;
   margin: 1.25rem 0;
   width: 80vw;
   display: flex;
@@ -328,7 +327,7 @@ model-viewer {
 }
 
 .section {
-  max-width: 90vh;
+  max-width: 100%;
   min-width: 10rem;
   width: 80vw;
 }
