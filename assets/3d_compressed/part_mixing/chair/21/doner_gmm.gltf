@@ -60,28 +60,9 @@
     {
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.65882354974746704,
-          0.21960784494876862,
-          0.19607843458652496,
-          1
-        ],
-        "metallicFactor": 0,
-        "roughnessFactor": 1
-      },
-      "emissiveFactor": [
-        0,
-        0,
-        0
-      ],
-      "alphaMode": "OPAQUE",
-      "name": "m2"
-    },
-    {
-      "pbrMetallicRoughness": {
-        "baseColorFactor": [
-          0.89999997615814209,
-          0.89999997615814209,
-          0.89999997615814209,
+          0.34999999403953552,
+          0.34999999403953552,
+          0.34999999403953552,
           1
         ],
         "metallicFactor": 0,
@@ -94,45 +75,64 @@
       ],
       "alphaMode": "OPAQUE",
       "name": "m1"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.59294116497039795,
+          0.19764706492424011,
+          0.17647059261798859,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE",
+      "name": "m2"
     }
   ],
   "accessors": [
     {
       "componentType": 5123,
-      "count": 5760,
+      "count": 11520,
       "type": "SCALAR"
     },
     {
       "componentType": 5126,
-      "count": 972,
+      "count": 1944,
       "max": [
         0.32556819915771484,
-        0.014832101762294769,
-        0.15082672238349915
+        0.73338896036148071,
+        0.36587843298912048
       ],
       "min": [
         -0.32556819915771484,
-        -0.43774014711380005,
+        -0.60322600603103638,
         -0.3516463041305542
       ],
       "type": "VEC3"
     },
     {
       "componentType": 5123,
-      "count": 9600,
+      "count": 3840,
       "type": "SCALAR"
     },
     {
       "componentType": 5126,
-      "count": 1620,
+      "count": 648,
       "max": [
         0.31422841548919678,
-        0.73338896036148071,
-        0.36587843298912048
+        0.014832101762294769,
+        0.15082672238349915
       ],
       "min": [
         -0.31422841548919678,
-        -0.60322600603103638,
+        -0.54948520660400391,
         -0.36187213659286499
       ],
       "type": "VEC3"
@@ -142,12 +142,12 @@
     {
       "buffer": 0,
       "byteOffset": 0,
-      "byteLength": 2916
+      "byteLength": 4668
     },
     {
       "buffer": 0,
-      "byteOffset": 2916,
-      "byteLength": 3740
+      "byteOffset": 4668,
+      "byteLength": 1988
     }
   ],
   "buffers": [

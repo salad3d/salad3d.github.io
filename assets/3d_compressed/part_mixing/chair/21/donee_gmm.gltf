@@ -60,28 +60,9 @@
     {
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.89999997615814209,
-          0.89999997615814209,
-          0.89999997615814209,
-          1
-        ],
-        "metallicFactor": 0,
-        "roughnessFactor": 1
-      },
-      "emissiveFactor": [
-        0,
-        0,
-        0
-      ],
-      "alphaMode": "OPAQUE",
-      "name": "m1"
-    },
-    {
-      "pbrMetallicRoughness": {
-        "baseColorFactor": [
-          0.65882354974746704,
-          0.21960784494876862,
-          0.19607843458652496,
+          0.59294116497039795,
+          0.19764706492424011,
+          0.17647059261798859,
           1
         ],
         "metallicFactor": 0,
@@ -94,21 +75,40 @@
       ],
       "alphaMode": "OPAQUE",
       "name": "m2"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.34999999403953552,
+          0.34999999403953552,
+          0.34999999403953552,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE",
+      "name": "m1"
     }
   ],
   "accessors": [
     {
       "componentType": 5123,
-      "count": 11520,
+      "count": 5760,
       "type": "SCALAR"
     },
     {
       "componentType": 5126,
-      "count": 1944,
+      "count": 972,
       "max": [
         0.48493194580078125,
-        0.62638372182846069,
-        0.53662616014480591
+        -0.0030513033270835876,
+        0.12877558171749115
       ],
       "min": [
         -0.48493194580078125,
@@ -119,20 +119,20 @@
     },
     {
       "componentType": 5123,
-      "count": 3840,
+      "count": 9600,
       "type": "SCALAR"
     },
     {
       "componentType": 5126,
-      "count": 648,
+      "count": 1620,
       "max": [
-        0.26418635249137878,
-        -0.1381429135799408,
-        -0.025170102715492249
+        0.4578496515750885,
+        0.62638372182846069,
+        0.53662616014480591
       ],
       "min": [
-        -0.26418635249137878,
-        -0.28512769937515259,
+        -0.4578496515750885,
+        -0.24143263697624207,
         -0.54740041494369507
       ],
       "type": "VEC3"
@@ -142,17 +142,17 @@
     {
       "buffer": 0,
       "byteOffset": 0,
-      "byteLength": 4808
+      "byteLength": 2712
     },
     {
       "buffer": 0,
-      "byteOffset": 4808,
-      "byteLength": 1960
+      "byteOffset": 2712,
+      "byteLength": 4060
     }
   ],
   "buffers": [
     {
-      "byteLength": 6768,
+      "byteLength": 6772,
       "uri": "donee_gmm.bin"
     }
   ],

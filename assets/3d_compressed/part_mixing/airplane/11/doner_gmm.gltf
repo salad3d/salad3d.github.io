@@ -36,6 +36,22 @@
               }
             }
           }
+        },
+        {
+          "attributes": {
+            "POSITION": 3
+          },
+          "indices": 2,
+          "mode": 4,
+          "material": 1,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 1,
+              "attributes": {
+                "POSITION": 0
+              }
+            }
+          }
         }
       ]
     }
@@ -44,9 +60,9 @@
     {
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.89999997615814209,
-          0.89999997615814209,
-          0.89999997615814209,
+          0.34999999403953552,
+          0.34999999403953552,
+          0.34999999403953552,
           1
         ],
         "metallicFactor": 0,
@@ -59,26 +75,65 @@
       ],
       "alphaMode": "OPAQUE",
       "name": "m1"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.59294116497039795,
+          0.19764706492424011,
+          0.17647059261798859,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE",
+      "name": "m2"
     }
   ],
   "accessors": [
     {
       "componentType": 5123,
-      "count": 15360,
+      "count": 13440,
       "type": "SCALAR"
     },
     {
       "componentType": 5126,
-      "count": 2592,
+      "count": 2268,
       "max": [
-        0.48497143387794495,
+        0.47696036100387573,
         0.12863865494728088,
         0.78689306974411011
       ],
       "min": [
-        -0.4850558340549469,
+        -0.47702163457870483,
         -0.18479853868484497,
         -0.67026937007904053
+      ],
+      "type": "VEC3"
+    },
+    {
+      "componentType": 5123,
+      "count": 1920,
+      "type": "SCALAR"
+    },
+    {
+      "componentType": 5126,
+      "count": 324,
+      "max": [
+        0.48497143387794495,
+        -0.10290317237377167,
+        0.20261368155479431
+      ],
+      "min": [
+        -0.4850558340549469,
+        -0.12291503697633743,
+        -0.029505401849746704
       ],
       "type": "VEC3"
     }
@@ -87,12 +142,17 @@
     {
       "buffer": 0,
       "byteOffset": 0,
-      "byteLength": 5848
+      "byteLength": 5108
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5108,
+      "byteLength": 1056
     }
   ],
   "buffers": [
     {
-      "byteLength": 5848,
+      "byteLength": 6164,
       "uri": "doner_gmm.bin"
     }
   ],

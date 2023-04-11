@@ -36,6 +36,22 @@
               }
             }
           }
+        },
+        {
+          "attributes": {
+            "POSITION": 3
+          },
+          "indices": 2,
+          "mode": 4,
+          "material": 1,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 1,
+              "attributes": {
+                "POSITION": 0
+              }
+            }
+          }
         }
       ]
     }
@@ -44,9 +60,9 @@
     {
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.89999997615814209,
-          0.89999997615814209,
-          0.89999997615814209,
+          0.34999999403953552,
+          0.34999999403953552,
+          0.34999999403953552,
           1
         ],
         "metallicFactor": 0,
@@ -59,17 +75,36 @@
       ],
       "alphaMode": "OPAQUE",
       "name": "m1"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.59294116497039795,
+          0.19764706492424011,
+          0.17647059261798859,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE",
+      "name": "m2"
     }
   ],
   "accessors": [
     {
       "componentType": 5123,
-      "count": 15360,
+      "count": 9600,
       "type": "SCALAR"
     },
     {
       "componentType": 5126,
-      "count": 2592,
+      "count": 1620,
       "max": [
         0.57629430294036865,
         0.21292275190353394,
@@ -77,6 +112,26 @@
       ],
       "min": [
         -0.5763513445854187,
+        -0.13141760230064392,
+        -0.12758421897888184
+      ],
+      "type": "VEC3"
+    },
+    {
+      "componentType": 5123,
+      "count": 5760,
+      "type": "SCALAR"
+    },
+    {
+      "componentType": 5126,
+      "count": 972,
+      "max": [
+        0.12142780423164368,
+        0.005354439839720726,
+        0.36635833978652954
+      ],
+      "min": [
+        -0.12143753468990326,
         -0.14804252982139587,
         -0.65559494495391846
       ],
@@ -87,12 +142,17 @@
     {
       "buffer": 0,
       "byteOffset": 0,
-      "byteLength": 5960
+      "byteLength": 4000
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 4000,
+      "byteLength": 2520
     }
   ],
   "buffers": [
     {
-      "byteLength": 5960,
+      "byteLength": 6520,
       "uri": "donee_gmm.bin"
     }
   ],

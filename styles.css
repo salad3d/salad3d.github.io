@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 :root {
   margin: 0;
   padding: 0;
-  --font-main: 'Roboto', sans-serif;
+  --font-main: 'Source Sans Pro', sans-serif;
   --font-fancy: 'Nanum Myeongjo', serif;
   font-family: var(--main-font);
 }
@@ -143,7 +143,7 @@ main {
  gap: 0;
  font-family: var(--font-main);
  font-weight: 300;
- font-size: 1.5rem;
+ font-size: 1.2rem;
  flex-direction: column;
  margin-bottom: 1rem;
 }
@@ -290,7 +290,7 @@ pre {
 
 .institution-list {
   font-family: var(--font-main);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin-top: 1rem;
 }
 
@@ -300,6 +300,8 @@ pre {
 }
 
 .author-link {
+    color: #4286f4;
+    text-decoration:none;
 }
 
 model-viewer {
@@ -368,6 +370,7 @@ model-viewer {
   align-items: center;
   gap: 0;
   width: 17%;
+  min-width: 10vw;
 }
 
 .part-completion-btn-con {
@@ -419,6 +422,7 @@ model-viewer {
   align-items: center;
   gap: 0;
   width: 25%;
+  min-width: 10vw;
 }
 
 .part-mixing-btn-con {
@@ -470,6 +474,7 @@ model-viewer {
   align-items: center;
   gap: 0;
   width: 25%;
+  min-width: 10vw;
 }
 
 .text-generation-btn-con {
@@ -535,6 +540,7 @@ model-viewer {
   align-items: center;
   gap: 0;
   width: 50%;
+  min-width: 10vw;
 }
 .text-completion-btn-con {
     display: flex;
@@ -594,6 +600,7 @@ model-viewer {
   align-items: center;
   gap: 0;
   width: 24%;
+  min-width: 10vw;
 }
 @media only screen and (max-width: 500px) {
   .teaser-bottom {
