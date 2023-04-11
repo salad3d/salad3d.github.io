@@ -1,0 +1,105 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "draco_decoder"
+  },
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "scene": 0,
+  "nodes": [
+    {
+      "name": "Node",
+      "mesh": 0
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Node-Mesh",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 1
+          },
+          "indices": 0,
+          "mode": 4,
+          "material": 0,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 0,
+              "attributes": {
+                "POSITION": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.89999997615814209,
+          0.89999997615814209,
+          0.89999997615814209,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE",
+      "name": "m1"
+    }
+  ],
+  "accessors": [
+    {
+      "componentType": 5125,
+      "count": 455808,
+      "type": "SCALAR"
+    },
+    {
+      "componentType": 5126,
+      "count": 75966,
+      "max": [
+        0.35941436886787415,
+        0.78292429447174072,
+        0.35951501131057739
+      ],
+      "min": [
+        -0.35624748468399048,
+        -0.78372460603713989,
+        -0.34363606572151184
+      ],
+      "type": "VEC3"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 87228
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 87228,
+      "uri": "30.bin"
+    }
+  ],
+  "extensionsRequired": [
+    "KHR_draco_mesh_compression"
+  ],
+  "extensionsUsed": [
+    "KHR_draco_mesh_compression"
+  ]
+}

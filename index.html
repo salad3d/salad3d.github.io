@@ -5,6 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/x-icon" href="assets/favicon.png">
   <title>SALAD</title>
@@ -87,72 +94,131 @@
           tasks.
         </div>
       </div>
-      <div class="divider"></div>
     </div>
     <div class="content">
+      <div class="divider"></div>
+      <script type="text/javascript" src="script.js"></script>
       <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js">
       </script>
       <div class="section">
-        <div class="sectitle">Generation Output</div>
+        <div class="sectitle">Shape Generation</div>
         <div class="gen-gallery">
           <div class="gen-btn-con">
-            <span id="gen-chair" class="gen-btn gen-btn-select" onclick="shuffle('chair')">Chairs</span>
-            <span id="gen-airplane" class="gen-btn" onclick="shuffle('airplane')">Airplanes</span>
-            <span id="gen-table" class="gen-btn" onclick="shuffle('table')">Tables</span>
-            <span id="gen-shuffle" class="gen-btn" onclick="shuffle()"
+            <span id="gen-chair" class="gen-btn gen-btn-select" onclick="shuffle2('gen', 'chair')">Chairs</span>
+            <span id="gen-airplane" class="gen-btn" onclick="shuffle2('gen', 'airplane')">Airplanes</span>
+            <span id="gen-table" class="gen-btn" onclick="shuffle2('gen', 'table')">Tables</span>
+            <span id="gen-shuffle" class="gen-btn" onclick="shuffle2('gen')"
               onmousedown="document.getElementById('gen-shuffle').classList.add('gen-btn-select');"
               onmouseup="document.getElementById('gen-shuffle').classList.remove('gen-btn-select');">Shuffle!</span>
           </div>
           <div id="gen-content">
           </div>
           <script>
-            var all_chair_idx = [...Array(53).keys()],
-                all_table_idx = [...Array(44).keys()],
-                all_airplane_idx = [...Array(40).keys()];
-
-            var curr_cat = 'chair';
-            const numDisplay = 10;
-
-            function initialize() {
-              gen_display = document.getElementById("gen-content");
-              for (let i = 0; i < numDisplay; i++)
-                gen_display.innerHTML +=
-                  "<div class='gen-entry' id='gen-entry-" + i + "'>\n"
-                  + "<model-viewer orientation='0 0 220deg' loading='lazy' id='gen-mesh-"
-                  + i + "' camera-controls touch-action='pan-y' src='assets/3d/generation/"
-                  + curr_cat + "/" + i + ".gltf'>\n</model-viewer>\n"
-            }
-            initialize();
-
-            function shuffleArray(arr) {
-              for (let i = arr.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [arr[i], arr[j]] = [arr[j], arr[i]];
-              }
-            }
-
-            function shuffle(cat = null) {
-              prevBtn = document.getElementById("gen-" + curr_cat).classList.remove("gen-btn-select");
-              if (!cat) cat = curr_cat;
-
-              let all_idx = (cat === 'chair') ? all_chair_idx :
-                            (cat === 'table') ? all_table_idx :
-                              all_airplane_idx;
-
-              gtag('event', cat+'_gen_click', {'time': Date.now(),});
-
-              shuffleArray(all_idx);
-              all_idx.map((mesh_idx, i) => {
-                if (i >= numDisplay) return;
-                document.getElementById("gen-mesh-" + i).setAttribute('src',
-                  `assets/3d/generation/${cat}/${mesh_idx}.gltf`);
-              })
-              btn = document.getElementById("gen-" + cat).classList.add("gen-btn-select");
-              curr_cat = cat;
-            }
+            initialize2("gen");
           </script>
         </div>
-        <div class="sectitle">Generation Comparison</div>
+        <div class="divider"></div>
+        <div class="content">
+          <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js">
+          </script>
+          <div class="section">
+            <div class="sectitle">Part Completion</div>
+            <div class="part-completion-gallery">
+                <div class="part-completion-btn-con">
+                    <span id="part-completion-chair" class="part-completion-btn part-completion-btn-select" onclick="shuffle2('part-completion', 'chair')">Chairs</span>
+                    <span id="part-completion-airplane" class="part-completion-btn" onclick="shuffle2('part-completion', 'airplane')">Airplanes</span>
+                    <span id="part-completion-shuffle" class="part-completion-btn" onclick="shuffle2('part-completion')"
+                     onmousedown="document.getElementById('part-completion-shuffle').classList.add('part-completion-btn-select');"
+                     onmouseup="document.getElementById('part-completion-shuffle').classList.remove('part-completion-btn-select');">Shuffle!</span>
+                </div>
+                <div id="part-completion-content">
+                    <div class="text-generation-subtitle" style="height: 2rem">Source</div>
+                    <div class="text-generation-subtitle boundary-right" style="height: 2rem">Selected Gaussians</div>
+                    <div class="text-generation-subtitle" style="width: 48%; height: 2rem">Completed Shape</div>
+                </div>
+                <script>
+                     initialize2("part-completion")
+                </script>
+                
+            </div>  
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="content">
+          <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js">
+          </script>
+          <div class="section">
+            <div class="sectitle">Part Mixing and Refinement</div>
+            <div class="part-mixing-gallery">
+                <div class="part-mixing-btn-con">
+                    <span id="part-mixing-chair" class="part-mixing-btn part-mixing-btn-select" onclick="shuffle2('part-mixing', 'chair')">Chairs</span>
+                    <span id="part-mixing-airplane" class="part-mixing-btn" onclick="shuffle2('part-mixing', 'airplane')">Airplanes</span>
+                    <span id="part-mixing-shuffle" class="part-mixing-btn" onclick="shuffle2('part-mixing')"
+                     onmousedown="document.getElementById('part-mixing-shuffle').classList.add('part-mixing-btn-select');"
+                     onmouseup="document.getElementById('part-mixing-shuffle').classList.remove('part-mixing-btn-select');">Shuffle!</span>
+                </div>
+                <div id="part-mixing-content">
+                    <div class="text-generation-subtitle" style="height: 2rem">Shape A</div>
+                    <div class="text-generation-subtitle" style="height: 2rem">Shape B</div>
+                    <div class="text-generation-subtitle boundary-right" style="height: 2rem">A$\rightarrow$B</div>
+                    <div class="text-generation-subtitle" style="height: 2rem; width: 24%">A$\rightarrow$B<br> Refined</div>
+                </div>
+                <script>
+                    initialize2("part-mixing")
+                </script>
+        </div>
+        <div class="divider"></div>
+        <div class="content">
+          <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js">
+          </script>
+          <div class="section">
+            <div class="sectitle">Text-Guided Shape Generation</div>
+            <div class="text-generation-gallery">
+                <div class="text-generation-btn-con">
+                    <span id="text-generation-shuffle" class="text-generation-btn" onclick="shuffle2('text-generation')"
+                     onmousedown="document.getElementById('text-generation-shuffle').classList.add('text-generation-btn-select');"
+                     onmouseup="document.getElementById('text-generation-shuffle').classList.remove('text-generation-btn-select');">Shuffle!</span>
+                </div>
+                <div id="text-generation-content">
+                    <div class="text-generation-subtitle" style="width: 24%">AutoSDF</div>
+                    <div class="text-generation-subtitle boundary-right" style="width: 24%">SALAD (Ours)</div>
+                    <div class="text-generation-subtitle" style="width: 24%">AutoSDF</div>
+                    <div class="text-generation-subtitle" style="width: 24%">SALAD (Ours)</div>
+                </div>
+                <script>
+                    initialize2("text-generation");
+                </script>
+
+        </div>
+        <div class="divider"></div>
+        <div class="content">
+          <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js">
+          </script>
+          <div class="section">
+            <div class="sectitle">Text-Guided Part Completion</div>
+            <div class="text-completion-gallery">
+                <div class="text-completion-btn-con">
+                    <span id="text-completion-shuffle" class="text-completion-btn" onclick="shuffle2('text-completion')"
+                     onmousedown="document.getElementById('text-completion-shuffle').classList.add('text-completion-btn-select');"
+                     onmouseup="document.getElementById('text-completion-shuffle').classList.remove('text-completion-btn-select');">Shuffle!</span>
+                </div>
+                <div id="text-completion-content">
+                    <div class="text-generation-subtitle" style="width: 24%">Input Mesh</div>
+                    <div class="text-generation-subtitle boundary-right" style="width: 24%">Input Gaussians</div>
+                    <div class="text-generation-subtitle" style="width: 24%">Output Mesh</div>
+                    <div class="text-generation-subtitle" style="width: 24%">Output Gaussians</div>
+                </div>
+                <script>
+                    initialize2("text-completion")
+                </script>
+
+        </div>
+        <div class="divider"></div>
+        <div class="content">
+
+        <div class="sectitle">More Comparison Results</div>
+        </div>
+        <div class="secsectitle">Comparison of Shape Generation</div>
         <div class="qual-cap-con">
           <span class="qual-cap">DPM</span>
           <span class="qual-cap">PVD</span>
@@ -160,16 +226,16 @@
           <span class="qual-cap">Voxel-GAN</span>
           <span class="qual-cap">Neural Wavelet</span>
           <span class="qual-cap">SPAGHETTI</span>
-          <span class="qual-cap">Diff. of z</span>
-          <span class="qual-cap">Diff. of p</span>
+          <span class="qual-cap">Diff. of $\mathbf{z}$</span>
+          <span class="qual-cap">Diff. of $\{\mathbf{p}_i\}$</span>
           <span class="qual-cap">Guassians</span>
-          <span class="qual-cap">Ours</span>
+          <span class="qual-cap">SALAD (Ours)</span>
         </div>
         <img src="assets/generation_comparison.png" class="qual"></img>
       </div>
       <div class="divider"></div>
       <div class="section">
-        <div class="sectitle">Part Completion</div>
+        <div class="secsectitle">Comparison of Part Completion</div>
         <div class="qual-cap-con">
           <span class="qual-cap2">GT</span>
           <span class="qual-cap2">Bounding Box</span>
@@ -179,11 +245,6 @@
           <span class="qual-cap3">SALAD (Ours)</span>
         </div>
         <img src="assets/part_mixing.png" class="qual qual2"></img>
-      </div>
-      <div class="divider"></div>
-      <div class="section3 section">
-        <div class="sectitle">Text-guided Part Completion</div>
-        <img src="assets/lang_completion.png" class="qual3"></img>
       </div>
       <div class="divider"></div>
       <div class="section">
@@ -196,9 +257,9 @@
   journal = {arXiv preprint arXiv:2303.12236}
 }</pre>
       </div>
-      <div class="section">
-        <div class="sectitle">Acknowledgement</div>
-      </div>
+      <!--<div class="section">-->
+      <!--  <div class="sectitle">Acknowledgement</div>-->
+      <!--</div>-->
     </div>
     <div class="divider"></div>
     <div class="footer">
