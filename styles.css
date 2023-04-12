@@ -359,8 +359,8 @@ model-viewer {
   align-items: center;
   gap: 0;
   width: 100%;
-  flex-wrap: wrap;
   margin-bottom: 1rem;
+  flex-direction: column;
 }
 
 .gen-entry {
@@ -602,6 +602,30 @@ model-viewer {
   width: 24%;
   min-width: 10vw;
 }
+
+
+.text-generation-subtitle {
+    width: 25%;
+    height: 1rem;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    text-align: center;
+}
+
+.text {
+    vertical-align: center;
+    width: 100%
+    text-align: center;
+    font-size: 1.rem;
+    font-family: var(--font-fancy);
+}
+
+.gen-content-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media only screen and (max-width: 500px) {
   .teaser-bottom {
     flex-direction: column;
@@ -618,21 +642,17 @@ model-viewer {
   .qual3 {
     width: 100%;
   }
-}
-
-.text-generation-subtitle {
-    width: 25%;
-    height: 1rem;
-    font-size: 1rem;
-    font-family: var(--font-main);
-    text-align: center;
-}
-
-.text {
-    /*margin-top: 20px;*/
-    vertical-align: center;
-    width: 100%
-    text-align: center;
-    font-size: 1.rem;
-    font-family: var(--font-fancy);
+  #gen-content {
+    flex-direction: row;
+  }
+  .gen-content-con {
+    flex-direction: column;
+    width: 50%;
+  }
+  .text-generation-subtitle {
+    width: 100%;
+  }
+  .gen-entry {
+    width: 100%;
+  }
 }

@@ -124,23 +124,22 @@
           <div class="section">
             <div class="sectitle">Part Completion</div>
             <div class="part-completion-gallery">
-                <div class="part-completion-btn-con">
-                    <span id="part-completion-chair" class="part-completion-btn part-completion-btn-select" onclick="shuffle2('part-completion', 'chair')">Chairs</span>
-                    <span id="part-completion-airplane" class="part-completion-btn" onclick="shuffle2('part-completion', 'airplane')">Airplanes</span>
-                    <span id="part-completion-shuffle" class="part-completion-btn" onclick="shuffle2('part-completion')"
-                     onmousedown="document.getElementById('part-completion-shuffle').classList.add('part-completion-btn-select');"
-                     onmouseup="document.getElementById('part-completion-shuffle').classList.remove('part-completion-btn-select');">Shuffle!</span>
-                </div>
-                <div id="part-completion-content">
-                    <div class="text-generation-subtitle" style="height: 2rem">Source</div>
-                    <div class="text-generation-subtitle boundary-right" style="height: 2rem">Selected Gaussians</div>
-                    <div class="text-generation-subtitle" style="width: 48%; height: 2rem">Completed Shape</div>
-                </div>
-                <script>
-                     initialize2("part-completion")
-                </script>
-                
-            </div>  
+              <div class="part-completion-btn-con">
+                <span id="part-completion-chair" class="part-completion-btn part-completion-btn-select" onclick="shuffle2('part-completion', 'chair')">Chairs</span>
+                <span id="part-completion-airplane" class="part-completion-btn" onclick="shuffle2('part-completion', 'airplane')">Airplanes</span>
+                <span id="part-completion-shuffle" class="part-completion-btn" onclick="shuffle2('part-completion')"
+                 onmousedown="document.getElementById('part-completion-shuffle').classList.add('part-completion-btn-select');"
+                 onmouseup="document.getElementById('part-completion-shuffle').classList.remove('part-completion-btn-select');">Shuffle!</span>
+              </div>
+              <div id="part-completion-content">
+                <div class="text-generation-subtitle" style="height: 2rem">Source</div>
+                <div class="text-generation-subtitle boundary-right" style="height: 2rem">Selected Gaussians</div>
+                <div class="text-generation-subtitle" style="width: 48%; height: 2rem">Completed Shape</div>
+              </div>
+              <script>
+                initialize2("part-completion")
+              </script>
+            </div>
           </div>
         </div>
         <div class="divider"></div>

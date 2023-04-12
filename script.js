@@ -137,7 +137,7 @@ function shuffle2(tag = null, cat = null) {
             }
             document.getElementById(`${tag}-text-${i}`).innerHTML = `"${sentences[tag][mesh_idx]}."`
         })
-       
+
     }
 
 }
@@ -145,7 +145,8 @@ function shuffle2(tag = null, cat = null) {
 function initialize2(tag) {
     display = document.getElementById(tag+"-content");
     if (tag === "gen") {
-        string = "<div class='text-generation-subtitle' style='width: 10%'>Shape</div>\n"
+        string = "<div class='gen-content-con'>";
+        string += "<div class='text-generation-subtitle'>Shape</div>\n"
         for (i = 0; i < numDisplays[tag]; i++) {
             string += `<div class='${tag}-entry' id='${tag}-entry-${i}-mesh'>\n`
             + `<model-viewer orientation='0 0 220deg' loading='lazy' id='${tag}-mesh-${i}'`
@@ -153,7 +154,9 @@ function initialize2(tag) {
             + "</model-viewer>\n"
             + "</div>\n";
         }
-        string += "<div class='text-generation-subtitle' style='width: 10%'>Gaussians</div>\n"
+        string += "</div>";
+        string += "<div class='gen-content-con'>";
+        string += "<div class='text-generation-subtitle'>Gaussians</div>\n"
         for (i = 0; i < numDisplays[tag]; i++) {
             string += `<div class='${tag}-entry' id='${tag}-entry-${i}-gaus'>\n`
             + `<model-viewer orientation='0 0 220deg' loading='lazy' id='${tag}-gaus-${i}'`
@@ -161,6 +164,7 @@ function initialize2(tag) {
             + "</model-viewer>\n"
             + "</div>\n";
         }
+        string += "</div>";
         display.innerHTML += string;
     } else if(tag === "part-completion"){
         for (i = 0; i < numDisplays[tag]; i++) {
@@ -251,7 +255,7 @@ function initialize2(tag) {
             string += `<div class='text' id='${tag}-text-${i}'>"${sentences[tag][i]}."</div>`
             string += "</div>"
         }
-        
+
         display.innerHTML += string;
     }
 }
