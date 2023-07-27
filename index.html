@@ -26,6 +26,10 @@
 
   gtag('config', 'G-5RH1J53HJR');
 </script>
+<script
+	type="module"
+	src="https://gradio.s3-us-west-2.amazonaws.com/3.36.1/gradio.js"
+></script>
 
 <body>
   <main>
@@ -52,6 +56,8 @@
         <a class="social-link" href="https://arxiv.org/abs/2303.12236">Arxiv</a>
         <a class="social-link" href="assets/salad.pdf">PDF</a>
         <a class="social-link" href="https://github.com/63days/salad">Code</a>
+        <a class="social-link" href="#:~:text=and%20manipulation%20tasks.-,HuggingFace,-Demo">Demo</a>
+        <a class="social-link" href="https://huggingface.co/spaces/KAIST-Geometric-AI-Lab/salad-demo">HuggingFace</a>
         <span id="bibtex-link">Bibtex</span>
       </div>
       <div class="teaser-container">
@@ -97,6 +103,15 @@
           tasks.
         </div>
       </div>
+    </div>
+    <div class="sectitle">HuggingFace Demo</div>
+    <div class="demoCon" style="width:90vw; height:fit-content;">
+      <gradio-app
+        src="https://kaist-geometric-ai-lab-salad-demo.hf.space"
+        eager="true"
+        initial_height="100vh"
+        theme_mode="light"
+      ></gradio-app>
     </div>
     <div class="content">
       <div class="divider"></div>
